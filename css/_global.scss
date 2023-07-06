@@ -1,0 +1,48 @@
+body {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+canvas {
+  z-index: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.ship {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  @include flex();
+  @include flex_absolute_center();
+
+
+  img {
+
+    position: relative;
+    width: 15vw;
+    animation: rotation 30s ease infinite;
+  }
+}
+
+
+@keyframes rotation {
+  0%,
+  50%,
+  100% {
+    transform: rotate(10deg);
+  }
+
+  25%,
+  75% {
+    transform: rotate(-10deg);
+  }
+}
